@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fashion Store" />
+    <title>Fashion Website</title>
+    <link rel="stylesheet" href="capstone.css" />
+  </head>
+  <body>
+    <header>
+      <div id="container">
+        <h1><span>_</span>Smiling<span>_</span></h1>
+        <section class="search-bar">
+          <input type="text" id="search-input" placeholder="Search for items..." />
+          <button  id="searchbtn" aria-label="Search Products" name="search" onclick="searchProducts()">🔍 </button>
+        </section>
+        <div class="cart">
+          <a class="cart-icon" href="#cart-section" aria-label="Toggle cart" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
+        </div>
+        <div id="dd">
+          <div >
+            <a href="#titles">Attires</a>         
+            
+          </div>
+          <div >
+            <a href="#title2">Shoes</a>            
+             
+          </div>
+          <div>
+            <a href="#title3">Accessories</a>                    
+          </div>
+          <!-- <div>
+            <a href="cart.html" target="_blank">My Cart</a>                    
+          </div> -->
+          <div>
+            <button name="login" class="open-button " onclick="openForm()" >LOGIN</button> 
+            <div class="form-popup" id="myForm">
+              <form  class="form-container" autocomplete="on">
+                <h1 class="LT" >Login</h1>
+            
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" id="email" name="email" required>
+            
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password"  id="password" name="psw" required>
+            
+                <button id="btn" type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+              </form>
+            </div> 
+            <div id="account-section" style="display: none;">
+              <button id="account-button"></button>
+            </div>                  
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- <h2>Products</h2> -->
+      <!-- clothes slides show -->
+      <div class="slideshow-container">
+        <div class="mySlides fade">          
+          <img src="photos/slides/cl3.jpg" style="width: 100%" height="50%" alt="clothes" />
+          <div class="text"><i>Outfits</i></div>
+        </div>
+
+        <div class="mySlides fade">          
+          <img src="photos/slides/cl2.jpg" style="width: 100%" height="50%" alt="clothes" />
+          <div class="text"><i>Outfits</i></div>
+        </div>
+
+        <div class="mySlides fade">         
+          <img src="photos/slides/cl1.jpg" style="width: 100%" height="50%" alt="clothes" />
+          <div class="text"><i>Outfits</i></div>
+        </div>
+
+        <div class="mySlides fade">          
+          <img src="photos/slides/cl4.jpg" style="width: 100%" height="50%" alt="clothes" />
+          <div class="text"><i>Outfits</i></div>
+        </div>
+
+        <div class="mySlides fade">         
+          <img src="photos/slides/clo5.jpg" style="width: 100%" height="50%" alt="clothes"/>
+          <div class="text"><i>Outfits</i></div>
+        </div>
+      </div>
+        <!-- shoes slide show -->
+      <div class="slideshow-shoe">
+        <div class="mySlides fade2">          
+          <img src="photos/slides/shoe1.jpg" style="width: 100%" height="50%" alt="shoes" />
+          <div class="text"><i>Foot Wear<i></div>
+        </div>
+
+        <div class="mySlides fade2">         
+          <img src="photos/slides/shoe2.jpg" style="width: 100%" height="50%" alt="shoes" />
+          <div class="text"><i>Foot Wear</i></div>
+        </div>
+
+        <div class="mySlides fade2">         
+          <img src="photos/slides/shoe3.jpg" style="width: 100%" height="50%" alt="shoes"/>
+          <div class="text"><i>Foot Wear</i></div>
+        </div>
+
+        <div class="mySlides fade2">          
+          <img src="photos/slides/shoe4.jpg" style="width: 100%" height="50%" alt="shoes"/>
+          <div class="text"><i>Foot Wear</i></div>
+        </div>
+
+        <div class="mySlides fade2">          
+          <img src="photos/slides/shoe5.jpg" style="width: 100%" height="50%"alt="shoes"/>
+          <div class="text"><i>Foot Wear</i></div>
+        </div>
+      </div>
+        <!-- accessories slide show -->
+      <div class="slideshow-accessory">
+        <div class="mySlides fade3">          
+          <img src="photos/slides/acc1.jpg" style="width: 100%" height="50%" alt="accessories" />
+          <div class="text"><i>Accessories</i></div>
+        </div>
+
+        <div class="mySlides fade3">          
+          <img src="photos/slides/acc2.jpg" style="width: 100%" height="50%" alt="accessories"/>
+          <div class="text"><i>Accessories</i></div>
+        </div>
+
+        <div class="mySlides fade3">          
+          <img src="photos/slides/acc3.jpg" style="width: 100%" height="50%" alt="accessories" />
+          <div class="text"><i>Accessories</i></div>
+        </div>
+
+        <div class="mySlides fade3">          
+          <img src="photos/slides/acc4.jpg" style="width: 100%" height="50%" alt="accessories" />
+          <div class="text"><i>Accessories</i></div>
+        </div>
+
+        <div class="mySlides fade3">          
+          <img src="photos/slides/acc5.jpg" style="width: 100%" height="50%" alt="accessories"/>
+          <div class="text"><i>Accessories</i></div>
+        </div>
+      </div>
+      
+      
+      <h2>OUR PRODUCTS</h2>
+  <!-- ATTIRES -->
+   <div id="product-list" >
+       <p id="titles" >Attires</p>
+       <div id="clothing">
+        <div class="product-card" data-id="1" data-name="Mini-Dress" data-price="300" data-image="photos/clothes/4bf5c0b2fae2138e05a58e4f0f81cd77.jpg">
+         <img id="myClothes" src="photos/clothes/4bf5c0b2fae2138e05a58e4f0f81cd77.jpg" alt="Dresses">
+         <h4>Mini Dress</h4>
+         <p id="clothes">Price: $ <del>500</del>300</p>
+         <button name="cloth" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card"  data-id="2" data-name="Jacket" data-price="500" data-image="photos/clothes/1afbcb76ce8e7636f2541650c9f5a78a.jpg" >
+          <img id="myClothes" src="photos/clothes/1afbcb76ce8e7636f2541650c9f5a78a.jpg" alt="Jackets">
+          <h4>Jacket</h4>
+          <p>Price: $ <del>900</del>500</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="3" data-name="2-Piece" data-price="350">
+          <img id="myClothes" src="photos/clothes/4dc5849b20527421a36dc1bb8610667a.jpg" alt="2-Piece">
+          <h4>2-Piece</h4>
+          <p>Price: $ <del>400</del>350</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="4" data-name="Mini Dress" data-price="700">
+          <img id="myClothes" src="photos/clothes/8fdf300862973f2d958302b12d223dd7.jpg" alt="Mini Dress">
+          <h4>Mini Dress</h4>
+          <p>Price: $ <del>900</del>700</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="5" data-name="Dinner-Dress" data-price="300">
+          <img id="myClothes" src="photos/clothes/71d85654931cee71989e8d961115ad75.jpg" alt="Dinner Dress">
+          <h4>Dinner-Dress</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="6" data-name="Palazo Pants" data-price="999">
+          <img id="myClothes" src="photos/clothes/857c59f55559b0d8586318d9157687b4.jpg" alt="Palazo Pants">
+          <h4>Palazo Pants</h4>
+          <p>Price: $ <del>1000</del>999</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="7" data-name="Sweat Shirts" data-price="85">
+          <img id="myClothes" src="photos/clothes/d40c76bc19c1da962d496e1f1307c4c2.jpg" alt="Sweat Shirts">
+          <h4>Sweat Shirts</h4>
+          <p>Price: $ <del>900</del>800</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="8" data-name="Blouses" data-price="85">
+          <img id="myClothes" src="photos/clothes/f33748cfc7a935dc607fb175c547cb41.jpg" alt="Blouses">
+          <h4>Blouses</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="cloth"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="9" data-name="Dresses" data-price="85">
+          <img id="myClothes" src="photos/clothes/824cd460692d84a88a8dff68e552ef6e.jpg" alt="Dresses">
+          <h4>Dresses</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="cloth" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="10" data-name="Lether Palazos" data-price="85">
+          <img id="myClothes" src="photos/clothes/a35d4054546e947f171620c06db1afed.jpg" alt="Palazo">
+          <h4>Lether Palazo</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button  name="cloth" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="11" data-name="Tennis Skirts" data-price="85">
+          <img id="myClothes" src="photos/clothes/d82a8bcdbde431d3982f5cec710d0e47.jpg" alt="Tennis Skirts">
+          <h4>Tennis Skirts</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="cloth" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="12" data-name="Trench Jackets" data-price="85">
+          <img id="myClothes" src="photos/clothes/c6a4ae00c0c41967a7bf9c401c6355e9.jpg" alt="Trench Jackets">
+          <h4>Trench Jackets</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="cloth" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+      
+      </div>
+  <!-- FOOT WEAR -->
+      <p id="title2" >Shoes</p>
+       <div id="shoes">
+        <div class="product-card" data-id="13" data-name="Sneakers" data-price="85">
+         <img id="myClothes" src="photos/shoes/2fcdbfb2195a32da6b0c73d3b377fafa.jpg" alt="Sneakers">
+         <h4>Sneakers</h4>
+         <p>Price: $ <del>500</del>300</p>
+         <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card" data-id="14" data-name="Open Shoes" data-price="85" >
+          <img id="myClothes" src="photos/shoes/4ca8fd81f45c7cad4184059a45e4eae8.jpg" alt="Open Shoes">
+          <h4>Open Shoes</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="15" data-name="Casual Heels" data-price="85">
+          <img id="myClothes" src="photos/shoes/793fbe14e072e31371a18f51fbbcfd1e.jpg" alt="Casual Heels">
+          <h4>Casual Heels</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button  name="shoe"onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="16" data-name="Dinner Heels" data-price="85">
+          <img id="myClothes" src="photos/shoes/2575c8015342d22ba07e5e4a0c57c73e.jpg" alt="Dinner Heels">
+          <h4>Dinner Heels</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="17" data-name="Lether Shoes" data-price="85">
+          <img id="myClothes" src="photos/shoes/242020ba1af2da1eeddb4ffbe8e49b4b.jpg" alt="Lether Shoes">
+          <h4>Lether Shoes</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="18" data-name="Fancy-Lether Shoes" data-price="85" >
+          <img id="myClothes" src="photos/shoes/a999c56edcba3187f733963fedafb8e9.jpg" alt="Fancy-Lether Shoes">
+          <h4>Fancy-Lether Shoes</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="19" data-name="Black Boots" data-price="85">
+          <img id="myClothes" src="photos/shoes/b21adb7e70b07bc102f4e72cbcd2ac19.jpg" alt="Black Boots">
+          <h4>Black Boots</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="20" data-name="Maroon Boots" data-price="85">
+          <img id="myClothes" src="photos/shoes/c8892afaff33bbbb6c8825048e7f520c.jpg" alt="Maroon Boots">
+          <h4>Maroon Boots</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="21" data-name="Crocs" data-price="85">
+          <img id="myClothes" src="photos/shoes/d624d9ff2ecf92f945931c74922dd94a.jpg" alt="Crocs">
+          <h4>Crocs</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="22" data-name="Sneakers" data-price="85">
+          <img id="myClothes" src="photos/shoes/dbdf4e487f3cc47942c2156afac5d957.jpg" alt="Sneakers">
+          <h4>Sneakers</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="23" data-name="Casual Heels" data-price="85">
+          <img id="myClothes" src="photos/shoes/e8aa7ddfa3bc275f6b85d707d3564918.jpg" alt="Casual Heels">
+          <h4>Casual Heels</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="24" data-name="Low Boots" data-price="85">
+          <img id="myClothes" src="photos/shoes/e644ffaf3cc1e3468ec0859b1d25ce4e.jpg" alt="Low Boots">
+          <h4>Low Boots</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="shoe" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+      
+      </div>
+   <!-- ACCESSORIES -->
+      <p id="title3" >Accessories</p>
+       <div id="accessories">
+        <div class="product-card" data-id="25" data-name="Hair Ribbons" data-price="85">
+         <img id="myClothes" src="photos/accessories/6d42c6c437b0fbd033d82d004b9577ff.jpg" alt="Hair Ribbons">
+         <h4>Hair Ribbons</h4>
+         <p>Price: $ <del>500</del>300</p>
+         <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-card"  data-id="26" data-name="Earings" data-price="85">
+          <img id="myClothes" src="photos/accessories/6e47236c5a28f25bf51cfa47e8b34408.jpg" alt="Earings">
+          <h4>Earings</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="27" data-name="Hats" data-price="85" data-image="photos/accessories/870eb38683f9081110df14fe2bcbbfc1.jpg">
+          <img id="myClothes" src="photos/accessories/870eb38683f9081110df14fe2bcbbfc1.jpg" alt="Hats">
+          <h4>Hats</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="28" data-name="Casual Heels" data-price="85">
+          <img id="myClothes" src="photos/accessories/bb6cec2d46a5231f4e34de837041bb9e.jpg" alt="Casual Heels">
+          <h4>Casual Heels</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="29" data-name="3-1 Earrings" data-price="85">
+          <img id="myClothes" src="photos/accessories/c5e4541c163b805a9440629990a06225.jpg" alt="3-1 Earrings">
+          <h4>3-1 Earrings</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="30" data-name="Artificial Earrings" data-price="85">
+          <img id="myClothes" src="photos/accessories/c9f8dea9493495d909a4888c6c3e636f.jpg" alt="Artificial Earrings">
+          <h4>Artificial Earrings</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="31" data-name="Hand Gloves" data-price="85">
+          <img id="myClothes" src="photos/accessories/c15560e4b4d5e06183b14e05d6d7f1b8.jpg" alt="Hand Gloves">
+          <h4>Hand Gloves</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)"class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="32" data-name="Casual Shoes" data-price="85">
+          <img id="myClothes" src="photos/shoes/c8892afaff33bbbb6c8825048e7f520c.jpg" alt="Casual Shoes">
+          <h4>Casual Shoes</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)"class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="33" data-name="Crocs" data-price="85">
+          <img id="myClothes" src="photos/shoes/d624d9ff2ecf92f945931c74922dd94a.jpg" alt="Crocs">
+          <h4>Crocs</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="34" data-name="Stockings" data-price="85">
+          <img id="myClothes" src="photos/accessories/c15560e4b4d5e06183b14e05d6d7f1b8.jpg" alt="Stockings">
+          <h4>Stockings</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="35" data-name="Glasses" data-price="85">
+          <img id="myClothes" src="photos/accessories/f32c0b619e4beadeb17d1f7fe42bd866.jpg" alt="Glasses">
+          <h4>Glasses</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+         <div class="product-card" data-id="36" data-name="Eye-Wear" data-price="85">
+          <img id="myClothes" src="photos/accessories/f91ca2c060e32851a7b144ee54a4a508.jpg" alt="Eye-Wear">
+          <h4>Eye-Wear</h4>
+          <p>Price: $ <del>500</del>300</p>
+          <button name="acc" onclick="addToCart(this)" class="add-to-cart">Add to Cart</button>
+         </div>
+      
+      </div>
+    </div>
+     
+    <section class="cart-section" id="cart-section" style="display:none;">
+      <h id="CART" >CartItems</h2>
+      <div id="cart-items"></div>
+      <button id="checkout-button" onclick="checkout()">Checkout</button>
+    </section>
+
+    <!-- <footer>
+      <p>© 2024 Fashion Store</p>
+    </footer> -->
+</main>
+    <script src="capstone.js"></script>
+  </body>
+</html>

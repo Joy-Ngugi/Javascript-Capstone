@@ -16,7 +16,7 @@
           <button  id="searchbtn" aria-label="Search Products" name="search" onclick="searchProducts()">🔍 </button>
         </section>
         <div class="cart">
-          <a class="cart-icon" href="#cart-section" aria-label="Toggle cart" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
+          <a class="cart-icon" href="#cart-section"  aria-label="Toggle cart" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
         </div>
         <div id="dd">
           <div >
@@ -33,7 +33,7 @@
           <!-- <div>
             <a href="cart.html" target="_blank">My Cart</a>                    
           </div> -->
-          <div>
+        </div>
             <button name="login" class="open-button " onclick="openForm()" >LOGIN</button> 
             <div class="form-popup" id="myForm">
               <form  class="form-container" autocomplete="on">
@@ -380,8 +380,58 @@
      
     <section class="cart-section" id="cart-section" style="display:none;">
       <h id="CART" >CartItems</h2>
-      <div id="cart-items"></div>
+      <div id="cart-items" ></div>
       <button id="checkout-button" onclick="checkout()">Checkout</button>
+      <div class="form-popup" id="infoForm">
+        <form  id="payment-container" autocomplete="on">
+          <h1 class="pay" >Payment Information</h1>
+      
+
+          <label for="name"><b>Name</b></label><br>
+          <input type="text" placeholder="Enter your first and last name" id="name" name="name" required>
+<br>
+          <label for="email"><b>Email</b></label><br>
+          <input type="text" placeholder="Enter Email" id="email" name="email" required>
+<br>
+          <label for="phone"><b>Phone Number  +254</b></label><br>
+          <input type="text" placeholder="Enter Phone Number" id="phone" name="phone" required>
+<br>
+          <label for="city"><b>City</b></label><br>
+          <input type="text" placeholder="Enter city" id="city" name="city" required>
+  <br> 
+           <label for="region"><b>Region</b></label><br>
+           <input type="text" placeholder="Enter Region" id="region" name="region" required>
+<br>   
+          <label for="address"><b>Address</b></label><br>
+          <input type="text" placeholder="Enter your address"  id="address" name="address" required>
+<br>
+    <div id="method">
+              <!-- <label for="pay"><b>Cash</b></label> -->
+          <input type="radio" onclick="cash()" name="indoor" value="Cash" placeholder="Enter your payment method" id="cash" name="email" required>
+          <label for="pay"><b>Cash</b></label>
+          <!-- <label for="pay"><b>Credit Card</b></label> -->
+          <input type="radio" name="indoor" value="Cash" onclick="credit()" placeholder="Enter your payment method" id="cc" name="email" required>
+          <label for="pay"><b>Credit Card</b></label>
+         
+    </div>
+ <br>     <div class="btn" >
+          <button id="submitbtn" type="submit"  >Submit</button>
+          <button type="button" class="btn cancel" onclick="cancel2()">Cancel</button>
+          </div>
+        </form>
+      </div>
+        <div id="credit-card-info" style="display: none;">
+            <h3 id="credit" >Enter Credit Card Information</h3>
+            <form id="credit-card-form">
+                <input type="text" id="card-number" placeholder="Card Number" required><br>
+                <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required><br>
+                <input type="text" id="cvv" placeholder="CVV" required><br>
+                <button type="submit">Submit </button>
+                <button type="button" onclick="cancel()" >Cancel</button>
+            </form>
+        </div>
+        <!-- </form>
+    </div> -->
     </section>
 
     <!-- <footer>

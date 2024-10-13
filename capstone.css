@@ -12,7 +12,7 @@
 body {
   font-family: Times New Roman;
   background-color: #f4f4f4;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 header {
@@ -370,21 +370,146 @@ footer {
 }
 #checkout-button{
   position: absolute;
-  top:500px;
-  margin-bottom: 20px;
+  left:700px;
+  background-color: rgb(255, 181, 44);
+  color: black;
+  font-weight: 700;
+  padding: 12px 0px;
+  border:color(from color srgb r g b);
+  cursor: pointer;
+  opacity: 0.8;
+  
+  width: 180px;
+  
 }
+#checkout-button:hover{
+background-color: orange;
+}
+#cart-items image{
+   height: 65%;
+   width:265%;
+}
+#infoForm{
+  /* display: none; */
+            position: fixed;
+            top: 5%;
+            left: 29%;
+            width: 100%;
+            height: 100%;
+            color:white;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            /* align-items: center; */
+            /* background-color: #fff; */
+            padding: 20px;
+            width: 700px;
+            max-width: 90%;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 999999; 
+            border: 1px solid orange;
+ 
+  border-width: 2px;
+}
+form label{
+  color: azure;
+}
+form input{
+  width:80%;
+  padding: 10px;
+  border-radius: 12px;
+}
+select{
+  width:80%;
+  padding: 10px;
+  border-radius: 12px;
+}
+#method {
+  display: inline-flex;
+   padding-right: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 29px;
+   user-select: none;
+  margin-top: 7px;
+}
+
+
+#method input {
+  width: 20px;
+  margin-right: 5px;
+  
+}
+#method label {
+  
+  margin-right: 50px;
+}
+#credit-card-info{
+  /* z-index:999999999; */
+  position: fixed;
+  top: 5%;
+  left: 29%;
+  width: 100%;
+  height: 100%;
+  color:white;
+  background: rgb(255, 195, 85);
+  justify-content: center;
+   padding: 20px;
+  width: 700px;
+  max-width: 90%;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999999; 
+  border: 1px solid orange;
+
+border-width: 2px
+}
+#credit-card-form{
+  margin-top: 10%;
+}
+#credit{
+  margin-top: 35%;
+  color: #000000;
+}
+#credit-card-form button{
+  padding: 7px;
+  border-radius: 12px;
+}
+#credit-card-form button:hover{
+  background-color: orange;
+}
+.btn button{
+  padding: 7px;
+  border-radius: 12px;
+}
+.btn button:hover{
+  background-color: orange;
+}
+
  /* Media Queries for Mobile Devices */
- /* @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
   input[type="text"] {
       width: 80px;
+     
   }
-
+h1{
+  position: absolute;
+  top:35px;
+  left:39%;
+  font-size: 30px;
+}
   header button {
       display: block;
       margin: 10px auto;
       width: 80%;
   }
-
+header a{
+  font-size: 19px;
+  /* position: absolute;
+  top:20px; 
+}
   .product-card {
       width: 100%;
       margin: 10px 0;
@@ -400,6 +525,8 @@ footer {
   #cart-section {
       width: 100%;
       right: 0;
+      position: absolute;
+      /* top:50000px; 
   }
   #clothing {
     display: grid;
@@ -498,8 +625,8 @@ footer {
 }
 }
 
-/* Media Queries for Tablets */
-/* @media screen and (min-width: 601px)  {
+/* Media Queries for Tablets 
+@media screen and (min-width: 601px)  {
   .product-card {
       width: 70%;
   }
@@ -633,7 +760,7 @@ margin-top: 40%;
   }
 }
 
-/* Media Queries for  landscape Tablets  
+/* Media Queries for  landscape Tablets   
  @media only screen and (min-width: 768px)  {
   .product-card {
       width: 70%;
@@ -657,8 +784,8 @@ margin-top: 40%;
 }
 h2{
   position: absolute;
-    top:1780px;
-    left:20%;
+    top:1280px;
+    left:28%;
     font-size: 40px;
 }
 
@@ -672,14 +799,14 @@ h2{
   display: grid;
   grid-template-columns: auto ;
   position: absolute;
-  top: 1920px;
+  top: 1420px;
   left: 5%;
 
 }
 #titles {
   text-align: center;
   position: absolute;
-  top: 1850px;
+  top: 1350px;
 
   
   
@@ -698,7 +825,7 @@ h2{
   display: grid;
   grid-template-columns: auto ;
   position: absolute;
-  top: 5100px;
+  top: 4600px;
   left: 5%;
 }
 #shoes {
@@ -709,7 +836,7 @@ h2{
 #title2 {
   text-align: center;
   position: absolute;
-  top: 5000px;
+  top: 4500px;
 
 }
 
@@ -717,7 +844,7 @@ h2{
   display: grid;
   grid-template-columns: auto ;
   position: absolute;
-  top: 8400px;
+  top: 7800px;
   left: 5%;
 }
 #accessories {
@@ -728,7 +855,7 @@ h2{
 #title3 {
   text-align: center;
   position: absolute;
-  top: 8300px;
+  top: 7700px;
 
 }
 #CART{
@@ -774,7 +901,7 @@ margin-top: 40%;
   }
 }
 
-/* Media Queries for  desktop  
+/* Media Queries for  desktop   
 @media only screen and (min-width: 992px) and (max-width: 1199px)  {
   .product-card {
       width: 70%;
@@ -891,9 +1018,9 @@ h2{
 }
 
 
-.slideshow-accessory,
+/*.slideshow-accessory,
 .slideshow-container,
-.slideshow-shoe { */
+.slideshow-shoe { 
 /* float: left;
 /* align-items: center; */
 
@@ -915,8 +1042,8 @@ top:300px;
 
   #cart-section {
       width: 300px;
-  }
-}
+  }*/
+
 /* Media Queries for  large desktops 
 @media only screen and (min-width: 1200px)  {
   .product-card {
@@ -924,12 +1051,12 @@ top:300px;
   }
 
  
-  /* header button {
+  header button {
     display: block;
     margin: 10px auto;
     width: 40%;
-} */
-/* #dd{
+} 
+ #dd{
   margin-right: 90px;
 } 
 
@@ -1005,7 +1132,7 @@ a:hover {
   width: 400px;
 }
 
-/* img {
+ img {
   height: 400px;
   width: 400px;
   padding: 5%;
@@ -1032,25 +1159,10 @@ a:hover {
   text-align: center;
   /* position: absolute;
   top: 500px;
-  width: 100%; 
+  width: 100%;
 }
 
-/* .fade,
-.fade2,
-.fade3 {
-  animation-name: fade;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-}
 
-@keyframes fade {
-  from {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 1;
-  }
-} 
 
 h2 {
   
@@ -1066,7 +1178,7 @@ h2 {
   position: absolute;
   top: 650px;
 
-  /* border-bottom: 2px solid orange;
+   border-bottom: 2px solid orange;
   padding-bottom: 0.5rem;
   padding-right: 90%;
   margin-left: 3%;
@@ -1166,7 +1278,7 @@ p {
   font-family: Times New Roman;
 }
  .cart-section { 
-  /* padding: 20px; */
+   padding: 20px; 
   /* margin-top:100px; 
  
 } 
@@ -1188,4 +1300,4 @@ p {
   position: absolute;
   top:-7000px;
 }
-} */
+}  */
